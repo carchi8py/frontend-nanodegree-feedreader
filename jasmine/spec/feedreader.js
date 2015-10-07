@@ -32,12 +32,12 @@ $(function() {
          * and that the URL is not empty.
          */
          it('have URL', function() {
-            for(feed in allFeeds) {
+            for(var feed in allFeeds) {
                 expect(allFeeds[feed].url).toBeDefined();
                 expect(allFeeds[feed].url.length).not.toBe(0);
             }
 
-         })
+         });
 
 
         /* TODO: Write a test that loops through each feed
@@ -46,7 +46,7 @@ $(function() {
          */
 
          it('have name', function() {
-            for(feed in allFeeds) {
+            for(var feed in allFeeds) {
                 expect(allFeeds[feed].name).toBeDefined();
                 expect(allFeeds[feed].name.length).not.toBe(0);
             }
@@ -65,8 +65,8 @@ $(function() {
          */
 
          it('is hidden', function() {
-            expect($('body').hasClass("menu-hidden")).toBe(true)
-         })
+            expect($('body').hasClass("menu-hidden")).toBe(true);
+         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -76,7 +76,7 @@ $(function() {
 
         it('has menu that toggles', function() {
             $('.menu-icon-link').click();
-            expect($('body').hasClass("menu-hidden")).not.toBe(true)
+            expect($('body').hasClass("menu-hidden")).not.toBe(true);
             $('.menu-icon-link').click();
             expect($('body').hasClass("menu-hidden")).toBe(true);
         });
@@ -119,7 +119,7 @@ $(function() {
         beforeEach(function(done) {
             // Load first feed
             loadFeed(0, function() {
-                firstFeedC = $('.feed').html();
+                firstFeed = $('.feed').html();
             });
             // Load second feed
             loadFeed(1, function() {
