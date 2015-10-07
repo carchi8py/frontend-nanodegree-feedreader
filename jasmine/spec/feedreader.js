@@ -34,7 +34,7 @@ $(function() {
          it('have URL', function() {
             for(feed in allFeeds) {
                 expect(allFeeds[feed].url).toBeDefined();
-                excpet(allFeeds[feed].url.length).not.toBe(0);
+                expect(allFeeds[feed].url.length).not.toBe(0);
             }
 
          })
@@ -48,7 +48,7 @@ $(function() {
          it('have name', function() {
             for(feed in allFeeds) {
                 expect(allFeeds[feed].name).toBeDefined();
-                excpet(allFeeds[feed].name.length).not.toBe(0);
+                expect(allFeeds[feed].name.length).not.toBe(0);
             }
          });
     });
@@ -73,6 +73,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+        it('has menu that toggles', function() {
+            $('.menu-icon-link').click();
+            expect($('body').hasClass("menu-hidden")).not.toBe(true)
+            $('.menu-icon-link').click();
+            expect($('body').hasClass("menu-hidden")).toBe(true);
+        });
 
     })
 
